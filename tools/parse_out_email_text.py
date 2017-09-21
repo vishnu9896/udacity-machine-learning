@@ -43,7 +43,27 @@ def parseOutText(f):
                 answ.append(s.rstrip())
     answ = ' '.join(answ) 
     return answ 
- 
+''''
+#to return the stemmed words 
+    if len(content) > 1:
+        ### remove punctuation
+        text_string = content[1].translate(string.maketrans("", ""), string.punctuation)
+
+        ### project part 2: comment out the line below
+        #words = text_string
+
+        ### split the text string into individual words, stem each word,
+        ### and append the stemmed word to words (make sure there's a single
+        ### space between each stemmed word)
+        test_string_split=text_string.split()
+        stemmed_text=[]
+        stemmer=SnowballStemmer("english")
+        for i in test_string_split:
+            stemmed_text.append(stemmer.stem(i))
+        for i in stemmed_text:
+            words=words+" "+i
+    return words
+    ''''
     
 
 def main():
